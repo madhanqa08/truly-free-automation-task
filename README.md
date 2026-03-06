@@ -41,26 +41,26 @@ truly-free-automation-task
 │   ├── main
 │   │   └── java
 │   │       └── pages
-│   │           ├── LoginPage.java
-│   │           ├── SignupPage.java
-│   │           └── HomePage.java
+│   │           ├── BrandPage.java
+│   │           ├── CartPage.java
+│   │           └── CheckoutPage.java
+|   |           └── LandingPage.java
+|   |           └── PaymentPage.java
+|   |           └── ProductPage.java
 │   │
 │   └── test
 │       └── java
 │           │
 │           ├── tests
-│           │   ├── SignupTest.java
-│           │   ├── LoginTest.java
-│           │   └── UserFlowTest.java
+│           │   └── Test.java
 │           │
-│           ├── base
-│           │   └── BaseTest.java
+│           ├── testcomponents
+│           │   └── Baseclass.java
+│           │   └── Listeners.java
 │           │
 │           ├── utilities
-│           │   ├── DriverFactory.java
-│           │   ├── RandomDataGenerator.java
-│           │   ├── ScreenshotUtil.java
-│           │   └── WaitHelper.java
+│           │   └── EmailGeneration.java
+│           │   └── MobileGeneration.java
 │           │
 │           └── reports
 │               └── ExtentManager.java
