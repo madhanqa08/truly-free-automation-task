@@ -3,7 +3,6 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Listeners;
-import org.testng.annotations.Test;
 import pageobjectmodel.*;
 import pojofiles.PlaceorderPojo;
 import pojofiles.SiginPojo;
@@ -12,13 +11,13 @@ import utilities.generation.MobileGenerations;
 import java.time.Duration;
 import java.util.List;
 @Listeners(testcomponents.ListenersClass.class)
-public class StandAloneTest extends Baseclass
+public class Test extends Baseclass
 {
     SiginPojo siginPojo = new SiginPojo();
     PlaceorderPojo placeorderPojo = new PlaceorderPojo();
     String productName = "COOFANDY Mens Muscle";
 
-    @Test(priority = 1)
+    @org.testng.annotations.Test(priority = 1)
     public void Signup() throws InterruptedException
     {
         LandingPage signupPage = new LandingPage(driver);
@@ -35,7 +34,7 @@ public class StandAloneTest extends Baseclass
         signupPage.submitSignup();
     }
 
-    @Test(priority = 2)
+    @org.testng.annotations.Test(priority = 2)
     public void NavigateToBrand() throws InterruptedException
     {
         login();
@@ -45,7 +44,7 @@ public class StandAloneTest extends Baseclass
         brandPage.selectBrand("Adidas");
     }
 
-    @Test(dependsOnMethods = "NavigateToBrand", priority = 3)
+    @org.testng.annotations.Test(dependsOnMethods = "NavigateToBrand", priority = 3)
     public void productSelection()
     {
         ProductPage productPage = new ProductPage(driver);
@@ -53,7 +52,7 @@ public class StandAloneTest extends Baseclass
     }
 
 
-    @Test(priority = 4)
+    @org.testng.annotations.Test(priority = 4)
     public void addProductToCart() throws InterruptedException
     {
         login();
@@ -66,7 +65,7 @@ public class StandAloneTest extends Baseclass
         productPage.addToCart();
     }
 
-    @Test(priority = 5)
+    @org.testng.annotations.Test(priority = 5)
     public void cartPageValidation() throws InterruptedException
     {
         login();
@@ -79,7 +78,7 @@ public class StandAloneTest extends Baseclass
     }
 
 
-    @Test(priority = 6)
+    @org.testng.annotations.Test(priority = 6)
     public void checkout() throws InterruptedException
     {
         login();

@@ -1,16 +1,12 @@
 package pageobjectmodel;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
-
 import java.time.Duration;
 import java.util.List;
-
-public class CartPage {
-
+public class CartPage
+{
     WebDriver driver;
     WebDriverWait wait;
-
     public CartPage(WebDriver driver)
     {
         this.driver = driver;

@@ -1,5 +1,4 @@
 package pojofiles;
-
 public class PlaceorderPojo
 {
     private String firstname = "Madhan Kumar";
@@ -10,11 +9,9 @@ public class PlaceorderPojo
     private String cvv = "111";
     private String expire = "05/28";
     private String cardName = "Madhan kumar B";
-
     public String getFirstname() {
         return firstname;
     }
-
     public String getLastname() {
         return lastname;
     }

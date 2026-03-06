@@ -6,19 +6,13 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import pageobjectmodel.LandingPage;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
-
-import static java.sql.DriverManager.getDriver;
-
 public class Baseclass
 {
     public static WebDriver driver;
@@ -67,7 +61,6 @@ public class Baseclass
         landingPage.goTo("https://trulyfreehome.dev/");
         return  landingPage;
     }
-
 
 
     public String takeScreenShoot(String testcaseName) throws IOException

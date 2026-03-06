@@ -1,5 +1,4 @@
 package testcomponents;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
@@ -7,7 +6,6 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import resources.ExtentedReports;
-
 public class ListenersClass extends Baseclass implements ITestListener
 {
 
@@ -23,13 +21,13 @@ public class ListenersClass extends Baseclass implements ITestListener
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        thread.get().log(Status.PASS, result.getMethod().getMethodName() + " - Passed ✔️");
+        thread.get().log(Status.PASS, result.getMethod().getMethodName());
     }
 
     @Override
     public void onTestFailure(ITestResult result)
     {
-        thread.get().log(Status.FAIL, result.getMethod().getMethodName() + " - Failed ❌");
+        thread.get().log(Status.FAIL, result.getMethod().getMethodName());
         thread.get().log(Status.FAIL, result.getThrowable());
 
         try

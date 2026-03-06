@@ -1,12 +1,9 @@
 package pageobjectmodel;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.*;
-
 import java.time.Duration;
 import java.util.List;
-
 public class BrandPage
 {
 
@@ -18,16 +15,9 @@ public class BrandPage
         this.driver = driver;
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
-
-    // Locators
-
     By brandsMenu = By.xpath("//div[contains(@class,'megamenu_container')]//nav//ul//li/span");
     By alphabets = By.xpath("(//div[contains(@class,'alphabet_column')]//div)");
     By brands = By.xpath("(//div[contains(@class,'brands_list_column')]//div//a//p)");
-
-
-
-    // Actions
 
     public void hoverOnBrandsMenu()
     {
