@@ -160,7 +160,8 @@ Dependencies include:
 * Selenium
 * TestNG
 * WebDriverManager
-* Extent Reports
+* Extent Reports(Aventstack)
+* commons-io
 
 ---
 
@@ -208,7 +209,7 @@ The report includes:
 Screenshots are automatically captured for failed test cases and stored in:
 
 ```
-test-output/screenshots/
+reports/screenshots/
 ```
 
 This helps in debugging failures quickly.
