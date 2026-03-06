@@ -43,10 +43,10 @@ truly-free-automation-task
 │   │       └── pages
 │   │           ├── BrandPage.java
 │   │           ├── CartPage.java
-│   │           └── CheckoutPage.java
-|   |           └── LandingPage.java
-|   |           └── PaymentPage.java
-|   |           └── ProductPage.java
+│   │           ├── CheckoutPage.java
+|   |           ├── LandingPage.java
+|   |           ├── PaymentPage.java
+|   |           ├── ProductPage.java
 │   │       └── resources
 |   |           └── ExtendedReport.java
 │   │
@@ -64,18 +64,20 @@ truly-free-automation-task
 │           │   └── EmailGeneration.java
 │           │   └── MobileGeneration.java
 │           │
-│           └── reports
-│               └── ExtentManager.java
+│           └── pojofiles
+│               └── PlaceholderPojo.java
+│               └── SiginPojo.java
 │
 ├── reports
-│   ├── screenshorts
+│   └── screenshorts
 │       └── index.html
 │
 ├── resources
-│   ├── Globaldata.properties
+│   └── Globaldata.properties
 │
 ├── pom.xml
 │
+├── testngxml
 │
 └── README.md
 ```
@@ -158,7 +160,8 @@ Dependencies include:
 * Selenium
 * TestNG
 * WebDriverManager
-* Extent Reports
+* Extent Reports(Aventstack)
+* commons-io
 
 ---
 
@@ -206,7 +209,7 @@ The report includes:
 Screenshots are automatically captured for failed test cases and stored in:
 
 ```
-test-output/screenshots/
+reports/screenshots/
 ```
 
 This helps in debugging failures quickly.
