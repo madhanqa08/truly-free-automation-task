@@ -107,7 +107,12 @@ public class EndtoEndFlowTest extends Baseclass
             System.out.println("Order Placed Successfully");
         }
     }
-
+    @Test(priority = 7)
+    public void logout1() throws InterruptedException
+    {
+        login();
+        landingPage.logout();
+    }
 
 
     public void login() throws InterruptedException

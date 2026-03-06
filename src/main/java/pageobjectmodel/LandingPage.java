@@ -31,6 +31,11 @@ public class LandingPage
     By email = By.xpath("//input[@data-testid='email-input']");
     By finalCreateAccount = By.xpath("//button[.='Create Account']");
 
+    By acc = By.xpath("//a[contains(@href,'account')]");
+    By logout = By.xpath("//a[contains(text(),'Log out')]");
+    //driver.findElement(By.xpath("//a[contains(@href,'account')]")).click();
+    //        driver.findElement(By.xpath("//a[contains(text(),'Log out')]")).click();
+
 
     // Actions
 
@@ -92,5 +97,11 @@ public class LandingPage
     public void goTo(String url)
     {
         driver.get(url);
+    }
+
+    public void logout()
+    {
+        driver.findElement(acc).click();
+        driver.findElement(logout).click();
     }
 }
