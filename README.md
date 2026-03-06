@@ -43,10 +43,10 @@ truly-free-automation-task
 │   │       └── pages
 │   │           ├── BrandPage.java
 │   │           ├── CartPage.java
-│   │           └── CheckoutPage.java
-|   |           └── LandingPage.java
-|   |           └── PaymentPage.java
-|   |           └── ProductPage.java
+│   │           ├── CheckoutPage.java
+|   |           ├── LandingPage.java
+|   |           ├── PaymentPage.java
+|   |           ├── ProductPage.java
 │   │       └── resources
 |   |           └── ExtendedReport.java
 │   │
@@ -73,7 +73,7 @@ truly-free-automation-task
 │       └── index.html
 │
 ├── resources
-│   ├── Globaldata.properties
+│   └── Globaldata.properties
 │
 ├── pom.xml
 │
