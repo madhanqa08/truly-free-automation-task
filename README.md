@@ -47,6 +47,8 @@ truly-free-automation-task
 |   |           └── LandingPage.java
 |   |           └── PaymentPage.java
 |   |           └── ProductPage.java
+│   │       └── resources
+|   |           └── ExtendedReport.java
 │   │
 │   └── test
 │       └── java
@@ -65,17 +67,15 @@ truly-free-automation-task
 │           └── reports
 │               └── ExtentManager.java
 │
-├── test-output
-│   ├── extent-report.html
-│   └── screenshots
+├── reports
+│   ├── screenshorts
+│       └── index.html
 │
 ├── resources
-│   ├── config.properties
-│   └── testdata.json
+│   ├── Globaldata.properties
 │
 ├── pom.xml
 │
-├── testng.xml
 │
 └── README.md
 ```
