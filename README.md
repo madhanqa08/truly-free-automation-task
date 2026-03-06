@@ -1,208 +1,266 @@
-🧪 Truly Free Automation Framework
+# Truly Free Automation Task
 
-An End-to-End UI Automation Framework built using Java, Selenium WebDriver, TestNG, and Maven to automate the core user journey of the Truly Free E-commerce Website.
-This framework follows the Page Object Model (POM) design pattern and integrates Extent Reports for detailed test reporting and screenshots for failure analysis.
-🌐 Website Under Test
-Main website automated in this project:
-👉 https://trulyfree.com
+## 📌 Project Overview
 
-The Truly Free platform provides eco-friendly and sustainable household products.
-The automation simulates the complete customer purchase workflow.
+**Truly Free Automation Task** is a Selenium-based UI automation testing project developed using **Java, Selenium WebDriver, TestNG, and Extent Reports**.
 
-🚀 Automated Test Scenarios
+The project automates core user workflows of the Truly Free website including **signup, login, and account-related actions**.
+It follows a **modular automation framework structure** to maintain scalability, readability, and maintainability.
 
-The automation framework covers the following test scenarios:
+The framework includes:
 
-🔹 User Signup
+* Structured **test modules**
+* **Reusable utilities**
+* **Page Object Model design**
+* **Extent Reports for test reporting**
+* **Automatic screenshot capture for failures**
 
-Create new account
+---
 
-Dynamic mobile number generation
+# 🧰 Framework & Technologies Used
 
-OTP verification
+| Technology              | Purpose                                    |
+| ----------------------- | ------------------------------------------ |
+| Java                    | Programming language                       |
+| Selenium WebDriver      | Browser automation                         |
+| TestNG                  | Test execution framework                   |
+| Maven                   | Dependency management                      |
+| Extent Reports          | Test reporting                             |
+| WebDriverManager        | Driver management                          |
+| Page Object Model (POM) | Design pattern for maintainable automation |
 
-🔹 Brand Navigation
+---
 
-Hover over brands menu
+# 📂 Project Structure (Fully Mapped)
 
-Select alphabetically grouped brands
-
-Navigate to brand product page
-
-🔹 Product Selection
-
-Select a product from brand catalog
-
-🔹 Add Product to Cart
-
-Add selected product to shopping cart
-
-🔹 Cart Validation
-
-Verify product is correctly added to cart
-
-🔹 Checkout Process
-
-Enter shipping details
-
-Handle payment iframe fields
-
-Place order successfully
-
-⚙️ Framework & Tools Used
-Tool	Purpose
-Java	Programming language
-Selenium WebDriver	Browser automation
-TestNG	Test execution framework
-Maven	Dependency management
-Extent Reports	Advanced test reporting
-Page Object Model (POM)	Framework design pattern
-IntelliJ IDEA	IDE for development
-📊 Extent Reports
-
-The framework integrates Extent Reports to generate visually rich automation reports.
-
-Features:
-
-✔ Step-by-step test execution logs
-✔ Pass / Fail / Skip test status
-✔ Timestamped execution details
-✔ Screenshot capture on failure
-
-Report location:
-
-test-output/ExtentReport.html
-
-Example report:
-
-Pass  ✔
-Fail  ❌
-Skipped ⚠
-Execution Time ⏱
-📸 Screenshot Capture
-
-The framework automatically captures screenshots when a test fails.
-
-Example folder:
-
-test-output/screenshots/
-
-Screenshots help in:
-
-✔ Debugging failures
-✔ Understanding UI issues
-✔ Reporting bugs easily
-
-🏗 Framework Design Pattern
-
-This automation project follows the Page Object Model (POM) architecture.
-
-Benefits:
-
-✔ Clean code structure
-✔ Separation of test logic and UI elements
-✔ High maintainability
-✔ Reusable components
-
-📂 Project Folder Structure
+```
 truly-free-automation-task
 │
 ├── src
-│
-│   ├── pages
 │   │
-│   │   SignupPage.java
-│   │   BrandPage.java
-│   │   ProductPage.java
-│   │   CartPage.java
-│   │   CheckoutPage.java
-│   │   PaymentPage.java
-│
-│   ├── tests
+│   ├── main
+│   │   └── java
+│   │       └── pages
+│   │           ├── LoginPage.java
+│   │           ├── SignupPage.java
+│   │           └── HomePage.java
 │   │
-│   │   SignupTest.java
-│   │   BrandTest.java
-│   │   ProductTest.java
-│   │   CartTest.java
-│   │   CheckoutTest.java
+│   └── test
+│       └── java
+│           │
+│           ├── tests
+│           │   ├── SignupTest.java
+│           │   ├── LoginTest.java
+│           │   └── UserFlowTest.java
+│           │
+│           ├── base
+│           │   └── BaseTest.java
+│           │
+│           ├── utilities
+│           │   ├── DriverFactory.java
+│           │   ├── RandomDataGenerator.java
+│           │   ├── ScreenshotUtil.java
+│           │   └── WaitHelper.java
+│           │
+│           └── reports
+│               └── ExtentManager.java
 │
-│   ├── utils
-│   │
-│   │   ScreenshotUtils.java
-│   │   MobileGenerator.java
+├── test-output
+│   ├── extent-report.html
+│   └── screenshots
 │
-│   ├── reports
-│   │
-│   │   ExtentReportManager.java
-│
-│   └── pojo
-│
-│       SignupPojo.java
-│       PlaceOrderPojo.java
+├── resources
+│   ├── config.properties
+│   └── testdata.json
 │
 ├── pom.xml
+│
+├── testng.xml
+│
 └── README.md
-⚡ Setup Instructions
-1️⃣ Clone the Repository
+```
+
+---
+
+# 🏗 Framework Architecture
+
+The framework follows a **layered architecture**:
+
+```
+Test Layer
+   ↓
+Page Object Layer
+   ↓
+Utility Layer
+   ↓
+WebDriver Layer
+```
+
+### Layers Explanation
+
+**Test Layer**
+
+* Contains all TestNG test classes
+* Responsible for executing test scenarios
+
+**Page Object Layer**
+
+* Contains page classes representing UI pages
+* Stores locators and page actions
+
+**Utility Layer**
+Reusable helper classes for:
+
+* Screenshot capture
+* Random test data generation
+* Explicit waits
+* Driver initialization
+
+**Reporting Layer**
+
+* Extent Reports generate a **detailed HTML test report**
+* Screenshots are attached automatically on failure
+
+---
+
+# 🚀 Setup Instructions
+
+### 1️⃣ Clone the Repository
+
+```bash
 git clone https://github.com/madhanqa08/truly-free-automation-task.git
-2️⃣ Open Project
+```
 
-Open using:
+---
 
+### 2️⃣ Open the Project
+
+Open the project in:
+
+```
 IntelliJ IDEA
-or
+OR
 Eclipse
-3️⃣ Install Dependencies
+```
 
-Maven will automatically download dependencies from:
+---
 
-pom.xml
-▶️ How to Run the Tests
-Option 1 — Using IntelliJ
-Right Click → Test Class → Run
-Option 2 — Using Maven
+### 3️⃣ Install Dependencies
 
-Run all tests using:
+Run Maven to install required dependencies:
 
+```bash
+mvn clean install
+```
+
+Dependencies include:
+
+* Selenium
+* TestNG
+* WebDriverManager
+* Extent Reports
+
+---
+
+# ▶️ How to Run the Automation
+
+### Method 1 — Run using TestNG XML
+
+Execute:
+
+```
+testng.xml
+```
+
+in your IDE.
+
+---
+
+### Method 2 — Run using Maven
+
+```bash
 mvn test
-🧠 Key Automation Concepts Used
+```
 
-Selenium WebDriver automation
+---
 
-Page Object Model (POM)
+# 📊 Test Reports
 
-Explicit waits for synchronization
+After execution, Extent Reports are generated at:
 
-TestNG test management
+```
+test-output/extent-report.html
+```
 
-Extent reporting
+The report includes:
 
-Screenshot capture on failures
+* Test execution summary
+* Passed / Failed tests
+* Execution time
+* Screenshot on failure
 
-Dynamic test data generation
+---
 
-Handling iframe based payment fields
+# 📸 Screenshots
 
-📸 Test Flow
-User Signup
-      ↓
-Brand Navigation
-      ↓
-Product Selection
-      ↓
-Add to Cart
-      ↓
-Cart Validation
-      ↓
-Checkout
-      ↓
-Payment
-      ↓
-Order Confirmation
-👨‍💻 Author
+Screenshots are automatically captured for failed test cases and stored in:
 
-Madhan Kumar B
-QA Automation Engineer
+```
+test-output/screenshots/
+```
+
+This helps in debugging failures quickly.
+
+---
+
+# 🌐 Application Under Test
+
+Main website homepage used for automation:
+
+```
+https://trulyfreehome.com
+```
+
+Automated workflows include:
+
+* User Signup
+* User Login
+* Form validation
+* Navigation verification
+* UI interaction
+
+---
+
+# 🧪 Test Coverage
+
+The automation suite covers the following areas:
+
+* User Registration
+* Login functionality
+* Field validation
+* UI navigation
+* Error message verification
+
+---
+
+# 🔮 Future Improvements
+
+Planned improvements for the framework:
+
+* CI/CD integration using GitHub Actions
+* Cross-browser testing
+* Docker test execution
+* Parallel execution
+* Data-driven testing
+
+---
+
+# 👨‍💻 Author
+
+**Madhan Kumar B**
+
+Automation Test Engineer
+Java | Selenium | TestNG | Automation Framework Development
 
 GitHub:
 https://github.com/madhanqa08
