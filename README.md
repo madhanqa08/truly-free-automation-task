@@ -64,11 +64,12 @@ truly-free-automation-task
 │           │   └── EmailGeneration.java
 │           │   └── MobileGeneration.java
 │           │
-│           └── reports
-│               └── ExtentManager.java
+│           └── pojofiles
+│               └── PlaceholderPojo.java
+│               └── SiginPojo.java
 │
 ├── reports
-│   ├── screenshorts
+│   └── screenshorts
 │       └── index.html
 │
 ├── resources
@@ -76,6 +77,7 @@ truly-free-automation-task
 │
 ├── pom.xml
 │
+├── testngxml
 │
 └── README.md
 ```
