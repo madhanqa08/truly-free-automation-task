@@ -41,12 +41,12 @@ truly-free-automation-task
 │   ├── main
 │   │   └── java
 │   │       └── pages
-│   │           ├── BrandPage.java
-│   │           ├── CartPage.java
-│   │           ├── CheckoutPage.java
-|   |           ├── LandingPage.java
-|   |           ├── PaymentPage.java
-|   |           ├── ProductPage.java
+│   │       |   ├── BrandPage.java
+│   │       |   ├── CartPage.java
+│   │       |   ├── CheckoutPage.java
+|   |       |   ├── LandingPage.java
+|   |       |   ├── PaymentPage.java
+|   |       |   ├── ProductPage.java
 │   │       └── resources
 |   |           └── ExtendedReport.java
 │   │
