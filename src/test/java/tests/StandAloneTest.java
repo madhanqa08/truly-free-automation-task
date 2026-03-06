@@ -2,6 +2,7 @@ package tests;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageobjectmodel.*;
 import pojofiles.PlaceorderPojo;
@@ -10,6 +11,7 @@ import testcomponents.Baseclass;
 import utilities.generation.MobileGenerations;
 import java.time.Duration;
 import java.util.List;
+@Listeners(testcomponents.ListenersClass.class)
 public class StandAloneTest extends Baseclass
 {
     SiginPojo siginPojo = new SiginPojo();
