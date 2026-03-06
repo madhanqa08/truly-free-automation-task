@@ -3,6 +3,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Listeners;
+import org.testng.annotations.Test;
 import pageobjectmodel.*;
 import pojofiles.PlaceorderPojo;
 import pojofiles.SiginPojo;
@@ -11,13 +12,13 @@ import utilities.generation.MobileGenerations;
 import java.time.Duration;
 import java.util.List;
 @Listeners(testcomponents.ListenersClass.class)
-public class Test extends Baseclass
+public class EndtoEndFlowTest extends Baseclass
 {
     SiginPojo siginPojo = new SiginPojo();
     PlaceorderPojo placeorderPojo = new PlaceorderPojo();
     String productName = "COOFANDY Mens Muscle";
 
-    @org.testng.annotations.Test(priority = 1)
+    @Test
     public void Signup() throws InterruptedException
     {
         LandingPage signupPage = new LandingPage(driver);
@@ -34,7 +35,7 @@ public class Test extends Baseclass
         signupPage.submitSignup();
     }
 
-    @org.testng.annotations.Test(priority = 2)
+    @Test(priority = 2)
     public void NavigateToBrand() throws InterruptedException
     {
         login();
@@ -44,7 +45,7 @@ public class Test extends Baseclass
         brandPage.selectBrand("Adidas");
     }
 
-    @org.testng.annotations.Test(dependsOnMethods = "NavigateToBrand", priority = 3)
+    @Test(dependsOnMethods = "NavigateToBrand", priority = 3)
     public void productSelection()
     {
         ProductPage productPage = new ProductPage(driver);
@@ -52,7 +53,7 @@ public class Test extends Baseclass
     }
 
 
-    @org.testng.annotations.Test(priority = 4)
+    @Test(priority = 4)
     public void addProductToCart() throws InterruptedException
     {
         login();
@@ -65,7 +66,7 @@ public class Test extends Baseclass
         productPage.addToCart();
     }
 
-    @org.testng.annotations.Test(priority = 5)
+    @Test(priority = 5)
     public void cartPageValidation() throws InterruptedException
     {
         login();
@@ -78,7 +79,7 @@ public class Test extends Baseclass
     }
 
 
-    @org.testng.annotations.Test(priority = 6)
+    @Test(priority = 6)
     public void checkout() throws InterruptedException
     {
         login();
