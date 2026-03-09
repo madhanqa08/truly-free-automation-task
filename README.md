@@ -47,6 +47,20 @@ Google Drive Backup:
 https://drive.google.com/file/d/1tK_1DK7tQEj8ixHaD6R3RUmxxi7RGGca/view?usp=sharing
 
 ---
+# 📊 Live Automation Report
+
+The Extent Report generated during automation execution is hosted here:
+
+https://thriving-zuccutto-be0e0d.netlify.app/
+
+This report includes:
+
+- Test execution summary
+- Pass / Fail status
+- Execution timeline
+- Screenshots for failed tests
+
+---
 
 # 📂 Project Structure (Fully Mapped)
 
