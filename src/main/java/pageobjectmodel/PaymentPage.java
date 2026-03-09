@@ -9,7 +9,7 @@ public class PaymentPage
     public PaymentPage(WebDriver driver)
     {
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
     By cardFrame = By.xpath("//iframe[contains(@id,'spreedly-number-frame')]");
@@ -44,9 +44,10 @@ public class PaymentPage
         driver.findElement(cardName).sendKeys(name);
     }
 
-    public void placeOrder()
+    public OrderPage placeOrder()
     {
         wait.until(ExpectedConditions.elementToBeClickable(placeOrder)).click();
+        return new OrderPage(driver);
     }
 
     public boolean verifyOrderSuccess()

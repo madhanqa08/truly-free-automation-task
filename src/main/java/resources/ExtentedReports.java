@@ -8,8 +8,8 @@ public class ExtentedReports
     {
         String path = System.getProperty("user.dir")+"//reports/index.html";
         ExtentSparkReporter sparkReporter = new ExtentSparkReporter(path);
-        sparkReporter.config().setReportName("Testing");
-        sparkReporter.config().setDocumentTitle("Amazon Testing Report");
+        sparkReporter.config().setReportName("Madhan Kumar B");
+        sparkReporter.config().setDocumentTitle("TrulyFreeHome Report");
         sparkReporter.config().setTheme(Theme.DARK);
         ExtentReports extentReports = new ExtentReports();
         extentReports.attachReporter(sparkReporter);

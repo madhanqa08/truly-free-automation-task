@@ -1,147 +1,131 @@
 package tests;
-import org.openqa.selenium.*;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageobjectmodel.*;
+import pojofiles.OrderPojo;
 import pojofiles.PlaceorderPojo;
+import pojofiles.ProductPojo;
 import pojofiles.SiginPojo;
 import testcomponents.Baseclass;
 import utilities.generation.MobileGenerations;
-import java.time.Duration;
-import java.util.List;
 @Listeners(testcomponents.ListenersClass.class)
 public class EndtoEndFlowTest extends Baseclass
 {
     SiginPojo siginPojo = new SiginPojo();
     PlaceorderPojo placeorderPojo = new PlaceorderPojo();
-    String productName = "COOFANDY Mens Muscle";
+    ProductPojo productPojo  = new ProductPojo();
+    OrderPojo orderPojo = new OrderPojo();
+    LandingPage signupPage;
+    BrandPage brandPage;
+    CartPage cartPage;
+    CheckoutPage checkoutPage;
+    PaymentPage paymentPage;
+    ProductPage productPage;
+    OrderPage orderPage;
 
-    @Test
+    @Test(priority = 1)
     public void Signup() throws InterruptedException
     {
-        LandingPage signupPage = new LandingPage(driver);
+        signupPage = new LandingPage(driver);
         signupPage.clickLoginAccount();
         signupPage.clickCreateAccount();
         signupPage.selectIndiaCountry();
         siginPojo.setMobile(MobileGenerations.generateMobileNumber());
-        String mobile = siginPojo.getMobile();
-        signupPage.enterMobile(mobile);
+        signupPage.enterMobile(siginPojo.getMobile());
         signupPage.clickContinue();
-        signupPage.enterOTP("1111");
-        signupPage.enterUserDetails("Madhan", "Kumar B", siginPojo.getEmail()
-        );
-        signupPage.submitSignup();
+        signupPage.enterOTP(siginPojo.getOtp());
+        signupPage.enterUserDetails(siginPojo.getFname(), siginPojo.getLname(), siginPojo.getEmail());
+        brandPage = signupPage.submitSignup();
+        // verify account creation
+        Assert.assertEquals(signupPage.getaccname(),siginPojo.getFullName());
     }
 
     @Test(priority = 2)
-    public void NavigateToBrand() throws InterruptedException
+    public void NavigateToBrand()
     {
-        login();
-        BrandPage brandPage = new BrandPage(driver);
+        brandPage = new BrandPage(driver);
         brandPage.hoverOnBrandsMenu();
-        brandPage.selectAlphabet("a");
-        brandPage.selectBrand("Adidas");
+        brandPage.selectAlphabet(productPojo.getCatagory());
+        productPage = brandPage.selectBrand(productPojo.getBrand());
+        // verify brand
+        Assert.assertEquals(brandPage.brandpage(),productPojo.matchbrand());
     }
 
     @Test(dependsOnMethods = "NavigateToBrand", priority = 3)
     public void productSelection()
     {
-        ProductPage productPage = new ProductPage(driver);
-        productPage.selectProduct(productName);
+        productPage.selectProduct(productPojo.getProductName());
+        productPage.productName();
+        //Verify product name
+        Assert.assertEquals(productPage.productName(),productPojo.choosenProductName());
+        // verify product price
+        Assert.assertEquals(productPage.getPrice(),productPojo.currentPrice());
+        // verify product quantity
+        Assert.assertEquals(productPage.getQuantity(),productPojo.currentQuantity());
+        // verify cart button
+        Assert.assertTrue(productPage.isAddtocartVisible());
     }
-
 
     @Test(priority = 4)
-    public void addProductToCart() throws InterruptedException
+    public void addProductToCart()
     {
-        login();
-        BrandPage brandPage = new BrandPage(driver);
-        ProductPage productPage = new ProductPage(driver);
-        brandPage.hoverOnBrandsMenu();
-        brandPage.selectAlphabet("a");
-        brandPage.selectBrand("Adidas");
-        productPage.selectProduct(productName);
-        productPage.addToCart();
+        cartPage = productPage.addToCart();
+        Assert.assertEquals(productPage.getcartCount(),productPojo.currentQuantity());
     }
 
+
     @Test(priority = 5)
-    public void cartPageValidation() throws InterruptedException
+    public void cartPageValidation()
     {
-        login();
-        CartPage cartPage = new CartPage(driver);
         cartPage.openCart();
-        if(cartPage.verifyProductInCart(productName))
+        if(cartPage.verifyProductInCart(productPojo.getProductName()))
         {
             System.out.println("Product is Verified");
         }
+        // verify product name (cart)
+        Assert.assertEquals(cartPage.getProductTitle(),productPojo.choosenProductName());
+        // verify product quantity (cart)
+        Assert.assertEquals(cartPage.getquantity(),productPojo.currentQuantity());
+        // verify product price (cart)
+        System.out.println("Price : "+cartPage.getprice());
+        Assert.assertTrue(productPojo.getCartPrice(cartPage.getprice()));
     }
-
 
     @Test(priority = 6)
-    public void checkout() throws InterruptedException
+    public void checkout()
     {
-        login();
-        CartPage cartPage = new CartPage(driver);
-        CheckoutPage checkoutPage = new CheckoutPage(driver);
-        PaymentPage paymentPage = new PaymentPage(driver);
-        cartPage.openCart();
-        cartPage.proceedToCheckout();
-        checkoutPage.fillAddress(
-                placeorderPojo.getFirstname(),
-                placeorderPojo.getLastname(),
-                placeorderPojo.getAddress(),
-                placeorderPojo.getPin()
-        );
+        checkoutPage = cartPage.proceedToCheckout();
+        paymentPage = checkoutPage.fillAddress(placeorderPojo.getFirstname(), placeorderPojo.getLastname(), placeorderPojo.getAddress(), placeorderPojo.getPin());
+        Assert.assertTrue(checkoutPage.isaddressSaved());
+    }
+
+    @Test(priority = 7)
+    public  void paymentOrder()
+    {
         paymentPage.enterCardNumber(placeorderPojo.getCard_number());
         paymentPage.enterCVV(placeorderPojo.getCvv());
-        paymentPage.enterExpiryAndName(
-                placeorderPojo.getExpire(),
-                placeorderPojo.getCardName()
-        );
-        paymentPage.placeOrder();
-
-        if(paymentPage.verifyOrderSuccess())
-        {
-            System.out.println("Order Placed Successfully");
-        }
+        paymentPage.enterExpiryAndName(placeorderPojo.getExpire(), placeorderPojo.getCardName());
+        orderPage =  paymentPage.placeOrder();
+        // verify order confirmation
+        Assert.assertTrue(paymentPage.verifyOrderSuccess());
     }
-    @Test(priority = 7)
-    public void logout1() throws InterruptedException
+
+    @Test(priority = 8)
+    public void orderpage()
     {
-        login();
+
+        // verify the thankyou message
+        Assert.assertEquals(orderPage.getMessage(),orderPojo.getTqmsg());
+        // verify the order id
+        Assert.assertTrue(orderPage.isvalidOrderId());
+    }
+
+    @Test(priority = 9)
+    public void logout1()
+    {
         landingPage.logout();
     }
 
-
-    public void login() throws InterruptedException
-    {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        driver.findElement(By.xpath("//div[@data-testid='login-account']")).click();
-        By contryCode = By.xpath("//div[@class='selected-flag']");
-        wait.until(ExpectedConditions.elementToBeClickable(contryCode)).click();
-        By clickIndia = By.xpath("//ul[@class='country-list']//li//span[text()='India (भारत)']");
-        wait.until(ExpectedConditions.elementToBeClickable(clickIndia)).click();
-        WebElement loginPhone = driver.findElement(By.id("loginPhoneInput"));
-        WebElement phone = wait.until(
-                ExpectedConditions.elementToBeClickable(loginPhone)
-        );
-        phone.click();
-        String number = siginPojo.getMobile();
-        for (char c : number.toCharArray())
-        {
-            phone.sendKeys(String.valueOf(c));
-            Thread.sleep(100);
-        }
-        WebElement contine = driver.findElement(By.xpath("//button[.='Continue']"));
-        wait.until(ExpectedConditions.elementToBeClickable(contine)).click();
-        List<WebElement> otpField = driver.findElements(By.xpath("//input[@maxlength='1']"));
-        String otp = "1111";
-        for (int i = 0; i < otpField.size(); i++)
-        {
-            otpField.get(i).sendKeys(String.valueOf(otp.charAt(i)));
-        }
-    }
 }
 

@@ -1,11 +1,8 @@
 package pageobjectmodel;
-
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.*;
-
 import java.time.Duration;
 import java.util.List;
-
 public class ProductPage {
 
     WebDriver driver;
@@ -14,16 +11,21 @@ public class ProductPage {
     public ProductPage(WebDriver driver)
     {
         this.driver = driver;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(20));
     }
 
-    // Locator
     By productList = By.xpath("//div[@data-testid='category-products']//div//h2");
 
     By addToCartBtn = By.xpath("//button[@data-testid='add-to-cart']");
 
+    By productname = By.xpath("//p[@data-testid='product-name']");
 
-    // Action
+    By productPrice = By.xpath("//span[contains(@class,'current_price')]");
+
+    By productQuantity =  By.xpath("(//div[contains(@class,'react-select__single')]//span)[2]");
+
+    By addtocartcount = By.xpath("//span[@data-testid='cart-count']");
+
     public void selectProduct(String productName)
     {
         List<WebElement> items = wait.until(
@@ -40,9 +42,34 @@ public class ProductPage {
         }
     }
 
-    // Add to cart
-    public void addToCart()
+    public  boolean isAddtocartVisible()
+    {
+        return wait.until(ExpectedConditions.elementToBeClickable(addToCartBtn)).isDisplayed();
+    }
+    public CartPage addToCart()
     {
         wait.until(ExpectedConditions.elementToBeClickable(addToCartBtn)).click();
+        return new CartPage(driver);
     }
+
+    public String productName()
+    {
+        return wait.until(ExpectedConditions.visibilityOf(driver.findElement(productname))).getText();
+    }
+
+    public String getPrice()
+    {
+       return wait.until(ExpectedConditions.visibilityOf(driver.findElement(productPrice))).getText();
+    }
+
+    public String getQuantity()
+    {
+        return wait.until(ExpectedConditions.visibilityOf(driver.findElement(productQuantity))).getText();
+    }
+
+    public String getcartCount()
+    {
+        return wait.until(ExpectedConditions.visibilityOf(driver.findElement(addtocartcount))).getText();
+    }
+
 }

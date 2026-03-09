@@ -1,12 +1,11 @@
 package testcomponents;
 import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import pageobjectmodel.LandingPage;
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,12 +17,10 @@ public class Baseclass
     public static WebDriver driver;
     public LandingPage landingPage;
     private static final ThreadLocal<WebDriver> tlDriver = new ThreadLocal<>();
-
     public WebDriver getDriver()
     {
         return tlDriver.get();
     }
-
     public WebDriver initilizeDriver() throws IOException
     {
         Properties properties = new Properties();
@@ -44,7 +41,7 @@ public class Baseclass
         else if (browser.equalsIgnoreCase("edge"))
         {
             driver = new EdgeDriver();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
             driver.manage().window().maximize();
         }
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -52,7 +49,7 @@ public class Baseclass
         return driver;
     }
 
-    @BeforeMethod(alwaysRun = true)
+    @BeforeClass(alwaysRun = true)
     public LandingPage launchApplication() throws IOException
     {
         driver = initilizeDriver();
@@ -65,7 +62,7 @@ public class Baseclass
 
     public String takeScreenShoot(String testcaseName) throws IOException
     {
-        WebDriver driver = getDriver();  // USE ThreadLocal driver
+        WebDriver driver = getDriver();
         File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         String folderPath = System.getProperty("user.dir") + "/reports/screenshots/";
         File directory = new File(folderPath);
@@ -77,9 +74,9 @@ public class Baseclass
         return "screenshots/" + fileName;
     }
 
-//    @AfterMethod
-//    public void quit()
-//    {
-//        driver.quit();
-//    }
+    @AfterClass
+    public void quit()
+    {
+        driver.quit();
+    }
 }
