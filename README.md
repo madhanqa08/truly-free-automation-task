@@ -340,7 +340,7 @@ Key features of the solution include:
 
 The framework is designed to be **scalable and extendable**, allowing additional automation scenarios to be easily added.
 ---
-
+---
 # 👨‍💻 Author
 
 **Madhan Kumar B**
