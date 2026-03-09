@@ -32,20 +32,15 @@ The framework includes:
 ---
 # 🎥 Video Demonstration
 
-A full demonstration video showing:
+![Automation Demo](https://img.youtube.com/vi/YRux9GFwWBU/maxresdefault.jpg)
 
+A full demonstration video showing:
 - Project structure
 - Automation execution
 - Generated reports
 
-YouTube Video:
-
-https://www.youtube.com/watch?v=YRux9GFwWBU
-
-Google Drive Backup:
-
-https://drive.google.com/file/d/1tK_1DK7tQEj8ixHaD6R3RUmxxi7RGGca/view?usp=sharing
-
+▶️ YouTube Video: https://www.youtube.com/watch?v=YRux9GFwWBU  
+📁 Google Drive Backup: https://drive.google.com/file/d/1tK_1DK7tQEj8ixHaD6R3RUmxxi7RGGca/view?usp=sharing
 ---
 # 📊 Live Automation Report
 
