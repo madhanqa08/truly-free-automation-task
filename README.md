@@ -67,6 +67,9 @@ This report includes:
 ```
 truly-free-automation-task
 │
+├── reports
+│   └── screenshorts
+│       └── index.html
 ├── src
 │   │
 │   ├── main
@@ -76,8 +79,9 @@ truly-free-automation-task
 │   │       |   ├── CartPage.java
 │   │       |   ├── CheckoutPage.java
 |   |       |   ├── LandingPage.java
+|   |       |   ├── OrderPage.java
 |   |       |   ├── PaymentPage.java
-|   |       |   ├── ProductPage.java
+|   |       |   └── ProductPage.java
 │   │       └── resources
 |   |           └── ExtendedReport.java
 │   │
@@ -85,7 +89,7 @@ truly-free-automation-task
 │       └── java
 │           │
 │           ├── tests
-│           │   └── Test.java
+│           │   └── EndtoEndFlowTest.java
 │           │
 │           ├── testcomponents
 │           │   └── Baseclass.java
@@ -98,10 +102,9 @@ truly-free-automation-task
 │           └── pojofiles
 │               └── PlaceholderPojo.java
 │               └── SiginPojo.java
+│               └── OrderPojo.java
+│               └── ProductPojo.java
 │
-├── reports
-│   └── screenshorts
-│       └── index.html
 │
 ├── resources
 │   └── Globaldata.properties
@@ -117,9 +120,6 @@ truly-free-automation-task
 # 🖼 Report Screenshot
 
 Below is a screenshot of the generated Extent Report.
-
-
-(Add the screenshot image here)
 
 Example:
 
