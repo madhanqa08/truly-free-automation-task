@@ -123,7 +123,7 @@ Below is a screenshot of the generated Extent Report.
 
 Example:
 
-![Extent Report Screenshot](reports/screenshots/report.png)
+![Extent Report Screenshot](https://github.com/madhanqa08/truly-free-automation-task/blob/9174d7f7e794d005484456b5d95d466a7144d7de/TrulyFreeHomeRecord.png)
 ```
 
 ---
