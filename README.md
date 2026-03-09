@@ -30,6 +30,23 @@ The framework includes:
 | Page Object Model (POM) | Design pattern for maintainable automation |
 
 ---
+# 🎥 Video Demonstration
+
+A full demonstration video showing:
+
+- Project structure
+- Automation execution
+- Generated reports
+
+YouTube Video:
+
+https://www.youtube.com/watch?v=YRux9GFwWBU
+
+Google Drive Backup:
+
+https://drive.google.com/file/d/1tK_1DK7tQEj8ixHaD6R3RUmxxi7RGGca/view?usp=sharing
+
+---
 
 # 📂 Project Structure (Fully Mapped)
 
