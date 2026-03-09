@@ -114,6 +114,19 @@ truly-free-automation-task
 ```
 
 ---
+# 🖼 Report Screenshot
+
+Below is a screenshot of the generated Extent Report.
+
+```
+(Add the screenshot image here)
+
+Example:
+
+![Extent Report Screenshot](reports/screenshots/report.png)
+```
+
+---
 
 # 🏗 Framework Architecture
 
