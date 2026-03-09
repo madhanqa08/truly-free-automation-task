@@ -345,7 +345,7 @@ The framework is designed to be **scalable and extendable**, allowing additional
 
 **Madhan Kumar B**
 
-Automation Test Engineer  
+Upcomming Automation Test Engineer  
 Java | Selenium | TestNG | Automation Framework Development
 
 GitHub:  
