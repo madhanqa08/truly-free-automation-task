@@ -30,6 +30,37 @@ The framework includes:
 | Page Object Model (POM) | Design pattern for maintainable automation |
 
 ---
+# 🎥 Video Demonstration
+
+A full demonstration video showing:
+
+- Project structure
+- Automation execution
+- Generated reports
+
+YouTube Video:
+
+https://www.youtube.com/watch?v=YRux9GFwWBU
+
+Google Drive Backup:
+
+https://drive.google.com/file/d/1tK_1DK7tQEj8ixHaD6R3RUmxxi7RGGca/view?usp=sharing
+
+---
+# 📊 Live Automation Report
+
+The Extent Report generated during automation execution is hosted here:
+
+https://thriving-zuccutto-be0e0d.netlify.app/
+
+This report includes:
+
+- Test execution summary
+- Pass / Fail status
+- Execution timeline
+- Screenshots for failed tests
+
+---
 
 # 📂 Project Structure (Fully Mapped)
 
@@ -41,12 +72,12 @@ truly-free-automation-task
 │   ├── main
 │   │   └── java
 │   │       └── pages
-│   │           ├── BrandPage.java
-│   │           ├── CartPage.java
-│   │           ├── CheckoutPage.java
-|   |           ├── LandingPage.java
-|   |           ├── PaymentPage.java
-|   |           ├── ProductPage.java
+│   │       |   ├── BrandPage.java
+│   │       |   ├── CartPage.java
+│   │       |   ├── CheckoutPage.java
+|   |       |   ├── LandingPage.java
+|   |       |   ├── PaymentPage.java
+|   |       |   ├── ProductPage.java
 │   │       └── resources
 |   |           └── ExtendedReport.java
 │   │
@@ -81,6 +112,18 @@ truly-free-automation-task
 │
 └── README.md
 ```
+
+---
+# 🖼 Report Screenshot
+
+Below is a screenshot of the generated Extent Report.
+
+
+(Add the screenshot image here)
+
+Example:
+
+![Extent Report Screenshot](https://github.com/madhanqa08/truly-free-automation-task/blob/9174d7f7e794d005484456b5d95d466a7144d7de/TrulyFreeHomeRecord.png)
 
 ---
 
