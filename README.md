@@ -4,7 +4,7 @@
 
 **Truly Free Automation Task** is a Selenium-based UI automation testing project developed using **Java, Selenium WebDriver, TestNG, and Extent Reports**.
 
-The project automates core user workflows of the Truly Free website including **signup, login, and account-related actions**.
+The project automates core user workflows of the Truly Free website including **signup, login, and account-related actions**.  
 It follows a **modular automation framework structure** to maintain scalability, readability, and maintainability.
 
 The framework includes:
@@ -19,17 +19,18 @@ The framework includes:
 
 # 🧰 Framework & Technologies Used
 
-| Technology              | Purpose                                    |
-| ----------------------- | ------------------------------------------ |
-| Java                    | Programming language                       |
-| Selenium WebDriver      | Browser automation                         |
-| TestNG                  | Test execution framework                   |
-| Maven                   | Dependency management                      |
-| Extent Reports          | Test reporting                             |
-| WebDriverManager        | Driver management                          |
+| Technology | Purpose |
+|---|---|
+| Java | Programming language |
+| Selenium WebDriver | Browser automation |
+| TestNG | Test execution framework |
+| Maven | Dependency management |
+| Extent Reports | Test reporting |
+| WebDriverManager | Driver management |
 | Page Object Model (POM) | Design pattern for maintainable automation |
 
 ---
+
 # 🎥 Video Demonstration
 
 A full demonstration video showing:
@@ -47,6 +48,7 @@ Google Drive Backup:
 https://drive.google.com/file/d/1tK_1DK7tQEj8ixHaD6R3RUmxxi7RGGca/view?usp=sharing
 
 ---
+
 # 📊 Live Automation Report
 
 The Extent Report generated during automation execution is hosted here:
@@ -78,12 +80,12 @@ truly-free-automation-task
 │   │       |   ├── BrandPage.java
 │   │       |   ├── CartPage.java
 │   │       |   ├── CheckoutPage.java
-|   |       |   ├── LandingPage.java
-|   |       |   ├── OrderPage.java
-|   |       |   ├── PaymentPage.java
-|   |       |   └── ProductPage.java
+│   │       |   ├── LandingPage.java
+│   │       |   ├── OrderPage.java
+│   │       |   ├── PaymentPage.java
+│   │       |   └── ProductPage.java
 │   │       └── resources
-|   |           └── ExtendedReport.java
+│   │           └── ExtendedReport.java
 │   │
 │   └── test
 │       └── java
@@ -105,7 +107,6 @@ truly-free-automation-task
 │               └── OrderPojo.java
 │               └── ProductPojo.java
 │
-│
 ├── resources
 │   └── Globaldata.properties
 │
@@ -117,6 +118,7 @@ truly-free-automation-task
 ```
 
 ---
+
 # 🖼 Report Screenshot
 
 Below is a screenshot of the generated Extent Report.
@@ -152,6 +154,7 @@ WebDriver Layer
 * Stores locators and page actions
 
 **Utility Layer**
+
 Reusable helper classes for:
 
 * Screenshot capture
@@ -303,8 +306,48 @@ Planned improvements for the framework:
 
 **Madhan Kumar B**
 
-Automation Test Engineer
+Automation Test Engineer  
 Java | Selenium | TestNG | Automation Framework Development
 
-GitHub:
+GitHub:  
 https://github.com/madhanqa08
+
+---
+
+# 🧠 Automation Approach
+
+The automation solution was designed using a **Page Object Model (POM) based framework** to ensure clean separation between test logic and page interactions.
+
+The following approach was used while developing the automation:
+
+1. Website exploration to understand user workflows  
+2. Identification of stable locators using browser developer tools  
+3. Designing a modular framework structure using Page Object Model  
+4. Implementing automated test scenarios using TestNG  
+5. Creating reusable utility classes for test data generation and screenshots  
+6. Integrating Extent Reports for detailed test execution reporting
+
+This approach improves **maintainability, scalability, and readability of the automation framework**.
+
+---
+
+# 📄 Solution Summary Report
+
+This automation project validates key user workflows on the **Truly Free website** using Selenium automation.
+
+The primary objective of the solution is to:
+
+- Automate important user journeys
+- Verify UI interactions and navigation
+- Validate form inputs and workflows
+- Generate execution reports for analysis
+
+Key features of the solution include:
+
+- Modular Page Object Model framework
+- Structured TestNG execution
+- WebDriverManager for automatic driver handling
+- Extent Reports integration
+- Screenshot capture on test failures
+
+The framework is designed to be **scalable and extendable**, allowing additional automation scenarios to be easily added.
