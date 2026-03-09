@@ -302,18 +302,6 @@ Planned improvements for the framework:
 
 ---
 
-# 👨‍💻 Author
-
-**Madhan Kumar B**
-
-Automation Test Engineer  
-Java | Selenium | TestNG | Automation Framework Development
-
-GitHub:  
-https://github.com/madhanqa08
-
----
-
 # 🧠 Automation Approach
 
 The automation solution was designed using a **Page Object Model (POM) based framework** to ensure clean separation between test logic and page interactions.
@@ -351,3 +339,16 @@ Key features of the solution include:
 - Screenshot capture on test failures
 
 The framework is designed to be **scalable and extendable**, allowing additional automation scenarios to be easily added.
+---
+
+# 👨‍💻 Author
+
+**Madhan Kumar B**
+
+Automation Test Engineer  
+Java | Selenium | TestNG | Automation Framework Development
+
+GitHub:  
+https://github.com/madhanqa08
+
+---
